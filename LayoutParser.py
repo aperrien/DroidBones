@@ -50,9 +50,6 @@ class LayoutProcessor:
     ##                              "ProgressBar", "DigitalClock", "DatePicker", "TimePicker", \
     ##                              "AnalogClock", "TextView" ):
 
-                                  
-
-
 
 class javaCodeWriter:
     def __init__(self):
@@ -111,7 +108,6 @@ class javaCodeWriter:
         function.append(wrapUpString)
 
         return function
-
 
     def writeCheckBoxClick(self,checkBoxID):
 
@@ -196,6 +192,9 @@ class javaCodeWriter:
             return self.writeEditTextEntry(widgetID)
         if (widgetType == 'CheckBox'):
             return self.writeCheckBoxClick(widgetID)
+        if (widgetType == 'RadioButton'):
+            return self.writeRadioButtonListener(widgetID)
+
 
     def writeOnCreate(self):
         myCode = []
